@@ -59,7 +59,49 @@ python -m venv venv
 venv\Scripts\activate     # Windows
 # source venv/bin/activate  # macOS/Linux
 pip install -r requirements.txt
-python app.py   
+python app.py
+
+🧠 Machine Learning Models
+Our solution integrates four intelligent models to support sustainability, predictive maintenance, and business forecasting:
+
+1. Equipment Sustainability Segmentation (Unsupervised Learning)
+Objective: Group equipment based on energy consumption, estimated lifetime, environmental conditions, and transport distance.
+
+Techniques: K-Means, DBSCAN, Agglomerative Clustering
+
+Data Used: FACT_SUSTAINABILITY_FINALE, Dim_Equipment_finale
+
+Impact: Identifies sustainable vs. high-impact equipment for targeted improvements.
+
+2. Failure Priority Prediction (Classification)
+Objective: Predict the failure priority level (PRIOK) for equipment maintenance based on operational and equipment attributes.
+
+Algorithms: Random Forest, Decision Tree, Logistic Regression
+
+Data Used: FACT_MAINTENANCE_FINALE, Dim_Equipment_finale, Dim_Machines_finale
+
+Impact: Enables proactive and cost-effective maintenance prioritization.
+
+3. CO₂ Emissions Estimation (Regression)
+Objective: Estimate CO₂ emissions based on energy usage for sustainability reporting.
+
+Model: Linear Regression
+
+Formula: CO2_Emissions_kg = Energy_Consumption_kWh × 0.233
+
+Data Used: FACT_SUSTAINABILITY_FINALE
+
+Impact: Provides environmental impact metrics directly from operational data.
+
+4. Retail Sales Forecasting (Time Series)
+Objective: Forecast monthly retail fuel sales to assist strategic planning.
+
+Techniques: ARIMA, SARIMA, Prophet
+
+Data Used: Monthly retail sales data (2002–2021)
+
+Impact: Supports macroeconomic analysis and demand forecasting for agri-food logistics.
+ 
 
 🔁 Automated Reports & Alerts
 Power BI dashboards auto-update from SAP data.
