@@ -1,0 +1,22 @@
+<div class="container mt-4">
+  <h2>Image Classification</h2>
+
+  <div class="mb-3">
+    <label for="imageUpload" class="form-label">Upload Image</label>
+    <input type="file" (change)="onFileSelected($event)" id="imageUpload" class="form-control" />
+  </div>
+
+  <div *ngIf="selectedImage" class="mb-3">
+    <p>Image: {{ selectedImage?.name }}</p>
+    <img [src]="getImagePreview()" alt="Preview" class="img-thumbnail" width="200">
+  </div>
+
+  <button class="btn btn-primary" (click)="classify()" [disabled]="!selectedImage">Classify</button>
+
+  <div *ngIf="result" class="alert mt-3" [ngClass]="{
+    'alert-success': result === 'No Defect',
+    'alert-danger': result === 'Defect'
+  }">
+    Result: {{ result }}
+  </div>
+</div>
